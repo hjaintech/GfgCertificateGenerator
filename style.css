@@ -1,0 +1,26 @@
+.image { 
+   position: relative; 
+   padding-bottom: 5px;
+   width:75rem;
+   border:1px solid black;
+   page-break-after: always;
+}
+
+p { 
+   position: absolute; 
+   top: 18rem;
+   /*left: 16rem;*/
+   /*width: 60%; */
+   font-size:30;
+   text-align: center;
+   padding-left:19rem;
+   padding-right:3rem;
+}
+
+
+/* Code to remove the header and footer text while printing the page*/
+@page 
+    {
+       /* size: auto;*/   /* auto is the initial value */
+        /*margin: 0mm; */ /* this affects the margin in the printer settings */
+    }

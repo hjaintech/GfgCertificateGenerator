@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="simple-excel.js"></script>
+		<script type="text/javascript" src="jspdf.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+		    $( document ).ready(function() {
+				/*var aNames = ["Mr Dheeraj Kumar", "Mr Sandeep Jain", "Mr Geeksfor Geeks"];
+		        var oOuterDiv = document.getElementById("idContent");
+		        for(var i = 0 ; i < aNames.length ; i ++){
+		        	oOuterDiv.innerHTML += '<div class="image">	<img src="blank_certificate.jpg" alt="" /><p>We are happy to certify that '+aNames[i]+' has been choosen Geek of the Month for his excellent contributions</p></div>';
+		        }*/
+
+		        //--------
+		       	var csvParser = new SimpleExcel.Parser.CSV();
+	            var fileInput = document.getElementById('fileInput');
+	            // parse when file loaded, then print the result to console
+	            fileInput.addEventListener('change', function (e) {            
+	                var file = e.target.files[0];
+	                csvParser.loadFile(file, function () {
+	                    var aCells = csvParser.getSheet();
+	                    var oOuterDiv = document.getElementById("idContent");
+	                    for(var i = 0 ; i < aCells.length ; i ++){
+	                    	var sName = aCells[i][0].value;
+	                    	if(sName){
+	                    		oOuterDiv.innerHTML += '<div class="image">	<img src="Campus_Ambassdar_certificate_blank.jpg" alt="" /><p>We are happy to recognize the hard work and certify that <br />'+aCells[i][0].value+' is associated with our "Compus Ambassador Program" from August\' 16 to June\' 17</p></div>';	
+	                    		
+	                    	}
+	                    }
+
+	                    // Hide the upload button
+	                    $( "#idUploadDiv" ).hide()
+	                });
+	            });
+		        //---------------
+		    });
+		 
+		    
+	    </script>
+	</head>
+	<body>
+		<div id="idUploadDiv">
+			<input type="file" id="fileInput" />
+		</div>
+		<div id="idContent">
+			
+		</div>
+		<!-- <div class="image">
+			<img src="Campus_Ambassdar_certificate_blank.jpg" alt="" />
+      
+			<p>We are happy to recognize the hard work and certify that <br />Mr. Shubham Chaudhary is associated with our "Compus Ambassador Program" from August' 16 to June' 17</p>
+		</div>  -->
+	</body>
+</html
