@@ -8,13 +8,23 @@
 
 p { 
    position: absolute; 
-   top: 18rem;
+   top: 17rem;
    /*left: 16rem;*/
    /*width: 60%; */
    font-size:30;
    text-align: center;
    padding-left:19rem;
    padding-right:3rem;
+}
+
+#idUploadDiv{
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+#FellowCampusAmbassador {
+    margin-left: 10px;
 }
 
 
